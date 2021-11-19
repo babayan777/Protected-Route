@@ -1,8 +1,8 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch} from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
-import Home from './components/Home'
+import Home from './components/Home';
 import ProtectedRoute from './components/ProtectedRoute'
 import { createContext, useState } from 'react';
 
@@ -11,14 +11,14 @@ export const HomeContext = createContext(null);
 function App() {
   const [token, setToken] = useState(() => localStorage.getItem("authentication"));
 
-  function handleSetToken(token = '') {
+  function handleSetToken(token) {
     if(token) {
       localStorage.setItem("authentication", token);
-    }else {
+    }
+    else {
       localStorage.removeItem("authentication");
     }
-
-    setToken(token)
+    setToken(token);
   }
 
   return (

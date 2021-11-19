@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {Route,Redirect} from 'react-router-dom'
+import { Route,Redirect } from 'react-router-dom'
 import { HomeContext } from '../App'
 
 function ProtectedRoute({component:Component, isAuth, ...rest}) {
